@@ -1,0 +1,23 @@
+// Fade in error messages
+$(document).ready(function() {
+	$('.errorMsg').delay(500).fadeIn(1000);
+});
+// Display the "terms" content
+$('#openTerms').click(function() {
+    $('#termsContent').css('display', 'block');
+});
+$(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('#toTop').fadeIn();
+    } else {
+        $('#toTop').fadeOut();
+    }
+});
+
+$("#toTop").click(function () {
+   //1 second of animation time
+   //html works for FFX but not Chrome
+   //body works for Chrome but not FFX
+   //This strange selector seems to work universally
+   $("html, body").animate({scrollTop: 0}, 1000);
+});
